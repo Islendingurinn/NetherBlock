@@ -15,8 +15,7 @@ public class AntiPigmen implements Listener {
 
         if(event.getEntityType().equals(EntityType.PIG_ZOMBIE) && event.getEntity().getWorld().getName().endsWith(ConfigManager.getNetherEnding())){
             boolean probability = new Random().nextInt(100)+1 <= ConfigManager.getPigmenProbability();
-            if(probability)
-                event.setCancelled(true);
+            event.setCancelled(probability);
         }
 
     }
